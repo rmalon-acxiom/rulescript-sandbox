@@ -2,130 +2,160 @@
 <html>
 
 <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-    <title>Acxiom Impact&trade; | RuleScript Sandbox</title>
-    <meta content="IE=9" http-equiv="X-UA-Compatible" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
-    <link href='lib/gen.css' rel='stylesheet' type='text/css'>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<title>Acxiom Impact&trade; | RuleScript Sandbox</title>
+	<meta content="IE=9" http-equiv="X-UA-Compatible" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
+	<link href='lib/gen.css' rel='stylesheet' type='text/css'>
+	<style>
+		.version {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			top: auto;
+			height: 200px;
+			z-index: 8;
+		}
+		.version_header {
+			background-color: rgba(208, 208, 208, 0.7);
+			padding: 2px 8px;
+			height: 16px;
+			font-weight: bold;
+		}
+	</style>
 </head>
 
 <body>
-    <div id="container">
-        <!-- HEADER & NAVIGATION -->
-        <div id="nav">
-            <img src="lib/impactlogo.png" width="165" height="auto" style="margin:2px 0 0 10px;" alt="acxiom | Impact&trade;" class="fl">
+	<div id="container">
+		<!-- HEADER & NAVIGATION -->
+		<div id="nav">
+			<img src="lib/impactlogo.png" width="165" height="auto" style="margin:2px 0 0 10px;" alt="acxiom | Impact&trade;" class="fl">
 
-            <div class="fr" title="Menu">
-                <button class="c-hamburger c-hamburger--htra">
-                    <span>toggle menu</span>
-                </button>
-            </div>
-            <h3 class="help fr" title="Help">?</h3>
-            <h1 class="nav fr">RuleScript Sandbox</h1>
-            <div id="header"></div>
-        </div>
-        <!-- HIDDEN MENU BAR -->
-        <div id="menubar">
-            <ul class="navi">
-                <li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/ASCII%20Check/DCS_ASCII_Check.html">ASCII&nbsp;Check</a>
-                </li>
-                <li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Comments%20to%20RS/DCS_Comments_to_RS.html">Comments to RS</a>
-                </li>
-                <li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Excel%20to%20JS/DCS_Excel_to_JSObject.html">Excel to JS</a>
-                </li>
-                <li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/RS%20Sandbox/DCS_RS_Sandbox.html">RuleScript&#160;Sandbox</a>
-                </li>
-                <li class="navi"><a class="navi bright active" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased+Tools+and+Pages/RS+SB/rulescript-sandbox.html">RuleScript&#160;Sandbox <span class="sup_tag">BETA</span></a>
-                </li>
-                <li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Social%20Tool/DCS_Social_Tool.html">Social&nbsp;Links</a>
-                </li>
-                <li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Compare%20Tool/DCS_Compare_Tool.html">Text&nbsp;Compare</a>
-                </li>
-                <li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/URL%20Encoder/DCS_URL_Encoder.html">URL&nbsp;Encoder</a>
-                </li>
-                <li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Rulescript%20Basics/RuleScript_Basics.html">RuleScript Basics</a>
-                </li>
-                <li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Rulescript%20Reference/Rulescript_Reference.html">Rulescript Reference</a>
-                </li>
-                <li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Impact%20Tags%20Reference/Impact_Tags_Reference.html">Impact Tags Reference</a>
-                </li>
-            </ul>
-        </div>
-        <!-- DATA COLUMN -->
-        <div id="data">
-          <div class="header">
-            <h1 class="fl">Set Data</h1>
-            <div id="data_controls"><span class="clear" title="Reset Data"><i class="fa fa-refresh"></i></span>&#160;&#160;<span class="add_data" title="Add Data"><i class="fa fa-plus"></i></span></div>
-          </div>
-          <div class="data_input">
-            <div class="input_block">
-              <input class="top" placeholder="Attribute"/>
-              <input class="bottom" placeholder="Value"/>
-            </div>
-          </div>
-        </div>
-        <!-- EDITOR COLUMN -->
-        <div id="main">
-            <div id="tabs">
-              <ul id="tablist" class="tabs"></ul>
-              <div id="add_tab" class="add" title="Add Tab (Alt+N)"><i class="fa fa-plus"></i></div>
-            </div>
-            <!-- EDITOR DIV -->
-            <div id="editor"><span class="loading"><i class="fa fa-spinner fa-pulse"></i></span></div>
-          <!-- RUN BLOCK -->
-          <div id="runblock" title="Execute Rule (Ctrl+Enter)">
-            <span class="format" id="format" title="Beautify Code (Alt+B)"><i class="fa fa-code"></i></span>
-            <span class="link" id="link" title="Share Rule (Alt+S)"><i class="fa fa-link"></i></span>
-            <div id="run">Run</div>
-          </div>
-          <!-- CONSOLE -->
-          <div id="console">
-            <!--<div id="resizer"><span class="lines"></span></div>-->
-            <div id="move_console">
-              <div id="con_header" class="header">OUTPUT <span id="con_reset" class="reset fr" title="Reset Console"><i class="fa fa-refresh"></i></span></div>
-              <div id="print_console">
+			<div class="fr" title="Menu">
+				<button class="c-hamburger c-hamburger--htra">
+					<span>toggle menu</span>
+				</button>
+			</div>
+			<h3 class="help fr" title="Help">?</h3>
+			<h1 class="nav fr">RuleScript Sandbox</h1>
+			<div id="header"></div>
+		</div>
+		<!-- HIDDEN MENU BAR -->
+		<div id="menubar">
+			<ul class="navi">
+				<li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/ASCII%20Check/DCS_ASCII_Check.html">ASCII&nbsp;Check</a>
+				</li>
+				<li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Comments%20to%20RS/DCS_Comments_to_RS.html">Comments to RS</a>
+				</li>
+				<li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Excel%20to%20JS/DCS_Excel_to_JSObject.html">Excel to JS</a>
+				</li>
+				<li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/RS%20Sandbox/DCS_RS_Sandbox.html">RuleScript&#160;Sandbox</a>
+				</li>
+				<li class="navi"><a class="navi bright active" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased+Tools+and+Pages/RS+SB/rulescript-sandbox.html">RuleScript&#160;Sandbox <span class="sup_tag">BETA</span></a>
+				</li>
+				<li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Social%20Tool/DCS_Social_Tool.html">Social&nbsp;Links</a>
+				</li>
+				<li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Compare%20Tool/DCS_Compare_Tool.html">Text&nbsp;Compare</a>
+				</li>
+				<li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/URL%20Encoder/DCS_URL_Encoder.html">URL&nbsp;Encoder</a>
+				</li>
+				<li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Rulescript%20Basics/RuleScript_Basics.html">RuleScript Basics</a>
+				</li>
+				<li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Rulescript%20Reference/Rulescript_Reference.html">Rulescript Reference</a>
+				</li>
+				<li class="navi"><a class="navi bright" href="https://connected.acxiom.com/sites/emarketingdelivery/cs/WebBased%20Tools%20and%20Pages/Impact%20Tags%20Reference/Impact_Tags_Reference.html">Impact Tags Reference</a>
+				</li>
+			</ul>
+		</div>
+		<!-- DATA COLUMN -->
+		<div id="data">
+			<div class="header">
+				<h1 class="fl">Set Data</h1>
+				<div id="data_controls"><span class="clear" title="Reset Data"><i class="fa fa-refresh"></i></span>&#160;&#160;<span class="add_data" title="Add Data"><i class="fa fa-plus"></i></span></div>
+			</div>
+			<div class="data_input">
+				<div class="input_block">
+					<input class="top" placeholder="Attribute" />
+					<input class="bottom" placeholder="Value" />
+				</div>
+				<div class="version">
+					<div class="version_header">History</div>
+					<div class="version_inner">
+						<ul>
+							<li>20 seconds ago</li>
+							<li>5 minutes ago</li>
+							<li>20 minutges ago</li>
+							<li>1 day ago</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- EDITOR COLUMN -->
+		<div id="main">
+			<div id="tabs">
+				<ul id="tablist" class="tabs"></ul>
+				<div id="add_tab" class="add" title="Add Tab (Alt+N)"><i class="fa fa-plus"></i></div>
+			</div>
+			<!-- EDITOR DIV -->
+			<div id="editor"><span class="loading"><i class="fa fa-spinner fa-pulse"></i></span></div>
+			<!-- RUN BLOCK -->
+			<div id="runblock" title="Execute Rule (Ctrl+Enter)">
+				<span class="format" id="format" title="Beautify Code (Alt+B)"><i class="fa fa-code"></i></span>
+				<span class="link" id="link" title="Share Rule (Alt+S)"><i class="fa fa-link"></i></span>
+				<div id="run">Run</div>
+			</div>
+			<!-- CONSOLE -->
+			<div id="console">
+				<!--<div id="resizer"><span class="lines"></span></div>-->
+				<div id="move_console">
+					<div id="con_header" class="header">OUTPUT <span id="con_reset" class="reset fr" title="Reset Console"><i class="fa fa-refresh"></i></span></div>
+					<div id="print_console">
 
-              </div>
-            </div>
-          </div>
-          <!-- POPUP -->
-          <div id="popup">
-            <div id="pop_header">
-              <div id="pop_title" class="fl"></div>
-              <span id="pop_close" class="fr"><i class="fa fa-times"></i></span></div>
-            <div id="pop_content"></div>
-          </div>
-        </div>
-        <!-- FOOTER -->
-        <div id="footer">
-            <div id="wrapper" class="gf">
-                <div class="fl gf">&copy;
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script>
-                    <noscript>
-                        2015
-                    </noscript>
-                    Acxiom </div>
-                <div class="fr gf">
-                  <a id="keys" title="Click to see list of available key commands">Key Commands</a> |
-                    <a id="changelog">Changelog</a> |
-                    <script language="JavaScript">
-                        var username = "timull";
-                        var hostname = "acxiom.com";
-                        var linktext = "Report a Problem";
-                        document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "?subject=Issue with RuleScript Sandbox'>" + linktext + "</a>");
-                    </script>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- jquery for stupid smooth stuff -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="lib/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="lib/sandbox.js" type="text/javascript" charset="utf-8"></script>
+					</div>
+				</div>
+			</div>
+			<!-- POPUP -->
+			<div id="popup">
+				<div id="pop_header">
+					<div id="pop_title" class="fl"></div>
+					<span id="pop_close" class="fr"><i class="fa fa-times"></i></span></div>
+				<div id="pop_content"></div>
+			</div>
+		</div>
+		<!-- FOOTER -->
+		<div id="footer">
+			<div id="wrapper" class="gf">
+				<div class="fl gf">&copy;
+					<script>
+						document.write(new Date().getFullYear())
+					</script>
+					<noscript>
+						2015
+					</noscript>
+					Acxiom </div>
+				<div class="fr gf">
+					<a id="keys" title="Click to see list of available key commands">Key Commands</a> |
+					<a id="changelog">Changelog</a> |
+					<script language="JavaScript">
+						var username = "timull";
+						var hostname = "acxiom.com";
+						var linktext = "Report a Problem";
+						document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "?subject=Issue with RuleScript Sandbox'>" + linktext + "</a>");
+					</script>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- jquery for stupid smooth stuff -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+	<script src="lib/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="lib/sandbox.js" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>
